@@ -1,0 +1,546 @@
+{
+	"info": {
+		"_postman_id": "ae72f606-1053-4fd4-a7bd-d93b3c16778f",
+		"name": "FreePBXV16_API_GRAPHQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4676344"
+	},
+	"item": [
+		{
+			"name": "Extensions",
+			"item": [
+				{
+					"name": "addExtension",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "client_authentication",
+									"value": "body",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "a53527f5b1e8e6a2cd919b7af360266e",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "9446c6cc854a71de2ec95862238d031ba839389deb1a7b72daeb60c905ba05ca",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://192.168.0.15/admin/api/api/token",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "rest",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "freepbx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n    addExtension(\r\n        input: {\r\n            extensionId: 1001\r\n            name: \"João Silva\"\r\n            tech: \"pjsip\"\r\n            channelName: \"João Silva\"\r\n            outboundCid: \"\"\r\n            email: \"\"\r\n            umGroups: \"1\"\r\n            umEnable: true\r\n            umPassword: \"senha_segura\"\r\n            vmPassword: \"senha_segura\"\r\n            vmEnable: true\r\n            callerID: \"\"\r\n            emergencyCid: \"\"\r\n            clientMutationId: \"\"\r\n            maxContacts: \"3\"\r\n        }\r\n    ) {\r\n        status\r\n        message\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://192.168.0.15/admin/api/api/gql",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"15"
+							],
+							"path": [
+								"admin",
+								"api",
+								"api",
+								"gql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateExtension",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "client_authentication",
+									"value": "body",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "a53527f5b1e8e6a2cd919b7af360266e",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "9446c6cc854a71de2ec95862238d031ba839389deb1a7b72daeb60c905ba05ca",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://192.168.0.15/admin/api/api/token",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "rest",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "freepbx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": " mutation {\r\n    updateExtension(\r\n        input: {\r\n            extensionId: 1001\r\n            name: \"João Silva da Cruz\"\r\n            tech: \"pjsip\"\r\n            channelName: \"João Silva da Cruz\"\r\n            outboundCid: \"1234567\"\r\n            email: \"chucknoris@gmail.com\"\r\n            umGroups: \"1\"\r\n            umEnable: true\r\n            umPassword: \"senha_segura_atualizada\"\r\n            vmPassword: \"senha_segura_atualizada\"\r\n            vmEnable: true\r\n            callerID: \"\"\r\n            emergencyCid: \"\"\r\n            clientMutationId: \"1001\"\r\n            extPassword: \"senha_segura_atualizada\"\r\n            maxContacts: \"4\"\r\n        }\r\n      ) {\r\n            status\r\n            message\r\n            clientMutationId\r\n       }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://192.168.0.15/admin/api/api/gql",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"15"
+							],
+							"path": [
+								"admin",
+								"api",
+								"api",
+								"gql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteExtension",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "client_authentication",
+									"value": "body",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "a53527f5b1e8e6a2cd919b7af360266e",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "9446c6cc854a71de2ec95862238d031ba839389deb1a7b72daeb60c905ba05ca",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://192.168.0.15/admin/api/api/token",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "rest",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "freepbx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n    deleteExtension(\r\n        input: { extensionId: 1001 }\r\n    ) {\r\n        status\r\n        message\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://192.168.0.15/admin/api/api/gql",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"15"
+							],
+							"path": [
+								"admin",
+								"api",
+								"api",
+								"gql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetchExtension",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "client_authentication",
+									"value": "body",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "a53527f5b1e8e6a2cd919b7af360266e",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "9446c6cc854a71de2ec95862238d031ba839389deb1a7b72daeb60c905ba05ca",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://192.168.0.15/admin/api/api/token",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "rest",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "freepbx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n    deleteExtension(\r\n        input: { extensionId: 1001 }\r\n    ) {\r\n        status\r\n        message\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://192.168.0.15/admin/api/api/gql",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"15"
+							],
+							"path": [
+								"admin",
+								"api",
+								"api",
+								"gql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetchAllExtensions",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "client_authentication",
+									"value": "body",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "a53527f5b1e8e6a2cd919b7af360266e",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "9446c6cc854a71de2ec95862238d031ba839389deb1a7b72daeb60c905ba05ca",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://192.168.0.15/admin/api/api/token",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "rest",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "freepbx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n    deleteExtension(\r\n        input: { extensionId: 1001 }\r\n    ) {\r\n        status\r\n        message\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://192.168.0.15/admin/api/api/gql",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"15"
+							],
+							"path": [
+								"admin",
+								"api",
+								"api",
+								"gql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetchAllValidExtensions",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "client_authentication",
+									"value": "body",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "a53527f5b1e8e6a2cd919b7af360266e",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "9446c6cc854a71de2ec95862238d031ba839389deb1a7b72daeb60c905ba05ca",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://192.168.0.15/admin/api/api/token",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "rest",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "freepbx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    fetchAllValidExtensions {\r\n        status\r\n        message\r\n        count\r\n        extension {\r\n            id\r\n            extensionId\r\n            user {\r\n              name\r\n              password\r\n              outboundCid\r\n              ringtimer\r\n              noanswer\r\n              sipname\r\n              password\r\n              extPassword\r\n            }\r\n              coreDevice {\r\n              deviceId\r\n              dial\r\n              devicetype\r\n              description\r\n              emergencyCid\r\n            }\r\n        }\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://192.168.0.15/admin/api/api/gql",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"0",
+								"15"
+							],
+							"path": [
+								"admin",
+								"api",
+								"api",
+								"gql"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Mode details: [https://wiki.freepbx.org/display/FPG/Core+Module+GraphQL+APIs](https://wiki.freepbx.org/display/FPG/Core+Module+GraphQL+APIs)\n\nBy Edson França\n\n17/10/2023"
+		},
+		{
+			"name": "firstStepGetToken",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessTokenUrl",
+							"value": "http://192.168.0.15/admin/api/api/gql",
+							"type": "string"
+						},
+						{
+							"key": "refreshTokenUrl",
+							"value": "http://192.168.0.15/admin/api/api/gql",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "6006ff505b6b722770fe6beffe6d70e9",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "712aba59d4a413fc6ab04aa7367106893dd61dae4f106300972f48514ac6d92b",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "freepbx-gql",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.0.15/admin/api/api/gql",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"15"
+					],
+					"path": [
+						"admin",
+						"api",
+						"api",
+						"gql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
